@@ -1,0 +1,18 @@
+debug: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+
+server:
+  port: 8081
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+spring:
+  application:
+    name: webapp
+
+
