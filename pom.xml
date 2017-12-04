@@ -20,7 +20,7 @@
     <modules>
         <module>eureka-server</module>
         <module>auth-server</module>
-        <module>zuul-server</module>
+        <module>zia-zuul</module>
         <module>zia-webapp</module>
         <module>zia-service-demo</module>
     </modules>
