@@ -1,16 +1,33 @@
+spring:
+  aop:
+    proxy-target-class: true
+  application:
+    name: zuul
+
+server:
+  port: 8080
+
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:9999/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+      clientId: ui1
+      clientSecret: ui1-secret
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
+      preferTokenInfo: false
+  sessions: ALWAYS
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+
 logging:
   level:
     org.springframework.security: DEBUG
     org.springframework.cloud: DEBUG
     org.springframework.web: WARN
-    
-server:
-  port: 8080
-spring:
-  aop:
-    proxy-target-class: true
-  application:
-    name: gateway
 
 zuul:  
   routes:    
@@ -23,20 +40,3 @@ zuul:
     user:
       path: /user/**
       url: http://localhost:9999/uaa/user
-
-
-security:
-  oauth2:    
-    client:
-      accessTokenUri: http://localhost:9999/uaa/oauth/token
-      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
-      clientId: ui1
-      clientSecret: ui1-secret   
-    resource:
-      userInfoUri: http://localhost:9999/uaa/user
-      preferTokenInfo: false
-  sessions: ALWAYS
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:1111/eureka
