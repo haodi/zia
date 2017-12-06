@@ -1,5 +1,10 @@
+spring:
+  application:
+    name: zia-eureka
+
 server:
-  port: 1111
+  port: 8761
+
 eureka:
   client:
     register-with-eureka: false
