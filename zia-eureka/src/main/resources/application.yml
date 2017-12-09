@@ -3,7 +3,7 @@ spring:
     name: zia-eureka
 
 server:
-  port: 8761
+  port: ${port:8761}
 
 eureka:
   client:
