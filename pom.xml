@@ -19,7 +19,7 @@
 
     <modules>
         <module>zia-eureka</module>
-        <module>auth-server</module>
+        <module>zia-auth</module>
         <module>zia-zuul</module>
         <module>zia-webapp</module>
         <module>zia-service-demo</module>
