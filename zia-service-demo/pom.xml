@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zia-service-demo</artifactId>
+    <artifactId>zia-service</artifactId>
 
     <dependencies>
         <dependency>
