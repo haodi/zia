@@ -22,7 +22,7 @@
         <module>zia-auth</module>
         <module>zia-zuul</module>
         <module>zia-webapp</module>
-        <module>zia-service-demo</module>
+        <module>zia-service</module>
     </modules>
 
     <build>
