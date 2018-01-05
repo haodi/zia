@@ -1,6 +1,4 @@
 spring:
-  aop:
-    proxy-target-class: true
   application:
     name: zuul
 
@@ -21,22 +19,27 @@ security:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1111/eureka
+      defaultZone: http://localhost:8761/eureka
 
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.cloud: DEBUG
-    org.springframework.web: WARN
-
-zuul:  
-  routes:    
+zuul:
+  ignored-services: *
+  routes:
     startpage:
       path: /**
       serviceId: WEBAPP
-    resource:      
+    resource:
       path: /resource/**
       url: http://localhost:9001/resource
     user:
       path: /user/**
       url: http://localhost:9999/uaa/user
+
+---
+spring:
+  profiles: dev
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.cloud: DEBUG
+    org.springframework.web: DEBUG
