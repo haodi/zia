@@ -1,4 +1,4 @@
-package com.yy.zia.eureka;
+package com.learning.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
