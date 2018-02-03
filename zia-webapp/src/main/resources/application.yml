@@ -1,18 +1,11 @@
-debug: true
-
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.web: DEBUG
+spring:
+  application:
+    name: zia-webapp
 
 server:
-  port: 8081
+  port: ${port:8081}
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1111/eureka
-spring:
-  application:
-    name: webapp
-
-
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761}/eureka
