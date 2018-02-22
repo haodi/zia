@@ -1,9 +1,9 @@
 spring:
   application:
-    name: zuul
+    name: zia-zuul
 
 server:
-  port: 8080
+  port: ${port:8080}
 
 security:
   oauth2:
@@ -16,17 +16,18 @@ security:
       userInfoUri: http://localhost:9999/uaa/user
       preferTokenInfo: false
   sessions: ALWAYS
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:${server.port}/eureka
 
 zuul:
   ignored-services: *
   routes:
     startpage:
       path: /**
-      serviceId: WEBAPP
+      serviceId: ZIA-WEBAPP
     resource:
       path: /resource/**
       url: http://localhost:9001/resource

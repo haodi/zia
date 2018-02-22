@@ -1,4 +1,4 @@
-package com.yy.zia.zuul;
+package com.learning.zuul;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,21 +30,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
 
-/**
- * Created by lihaodi on 2017/5/30.
- */
-
-@SpringBootApplication
 @EnableZuulProxy
 @EnableOAuth2Sso
-public class GatewayApplication extends OAuth2SsoDefaultConfiguration {
+@SpringBootApplication
+public class ZUULApplication extends OAuth2SsoDefaultConfiguration {
 
-    public GatewayApplication(ApplicationContext applicationContext, OAuth2SsoProperties sso) {
+    public ZUULApplication(ApplicationContext applicationContext, OAuth2SsoProperties sso) {
         super(applicationContext, sso);
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(GatewayApplication.class, args);
     }
 
     @Override
@@ -92,6 +84,11 @@ public class GatewayApplication extends OAuth2SsoDefaultConfiguration {
         repository.setHeaderName("X-XSRF-TOKEN");
         return repository;
     }
+
+
+    public static void main(String[] args) {
+        SpringApplication.run(ZUULApplication.class, args);
+    }
 }
 
 @Component
@@ -102,7 +99,6 @@ class WorkaroundRestTemplateCustomizer implements UserInfoRestTemplateCustomizer
     public void customize(OAuth2RestTemplate template) {
         template.setInterceptors(new ArrayList<>(template.getInterceptors()));
     }
-
 }
 
 
