@@ -23,7 +23,7 @@ eureka:
       defaultZone: http://localhost:${server.port}/eureka
 
 zuul:
-  ignored-services: *
+  ignored-services: '*'
   routes:
     startpage:
       path: /**
