@@ -5,7 +5,18 @@ spring:
 server:
   port: ${port:8081}
 
+security:
+  user:
+    name: test
+    password: test
+
 eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761}/eureka
+  instance:
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}  # 将Instance ID设置成IP:端口的形式

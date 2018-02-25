@@ -1,4 +1,4 @@
-package com.yy.zia.auth;
+package com.learning.auth;
 
 import java.security.Principal;
 
@@ -10,16 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-/**
- * Created by lihaodi on 2017/5/30.
- */
-
 @EnableDiscoveryClient
-@SpringBootApplication
 @EnableResourceServer
 @RestController
 @SessionAttributes("authorizationRequest")
-public class AuthServer {
+@SpringBootApplication
+public class AuthApplication {
 
     @RequestMapping("/user")
     public Principal user(Principal user) {
@@ -27,6 +23,6 @@ public class AuthServer {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthServer.class, args);
+        SpringApplication.run(AuthApplication.class, args);
     }
 }

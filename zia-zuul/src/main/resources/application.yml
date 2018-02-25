@@ -3,7 +3,7 @@ spring:
     name: zia-zuul
 
 server:
-  port: ${port:8080}
+  port: ${port:8089}
 
 security:
   oauth2:
@@ -20,7 +20,11 @@ security:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:${server.port}/eureka
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}  # 将Instance ID设置成IP:端口的形式
+
 
 zuul:
   ignored-services: '*'
@@ -34,13 +38,3 @@ zuul:
     user:
       path: /user/**
       url: http://localhost:9999/uaa/user
-
----
-spring:
-  profiles: dev
-
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.cloud: DEBUG
-    org.springframework.web: DEBUG

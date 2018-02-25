@@ -1,19 +1,23 @@
-server:
-  port: 9001
-  context-path: /resource
-
-security:
-  sessions: NEVER
-  
 spring:
+  application:
+    name: zia-resource
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-  application:
-    name: service-demo
+
+server:
+  port: ${port:9001}
+  context-path: /resource
+
+security:
+  sessions: NEVER
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1111/eureka
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761}/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}  # 将Instance ID设置成IP:端口的形式

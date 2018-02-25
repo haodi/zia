@@ -1,19 +1,20 @@
-server:
-  port: 9999
-  context-path: /uaa
-
-security:
-  sessions: if-required
-  
 spring:
+  application:
+    name: zia-auth
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-  application:
-    name: auth
+
+server:
+  port: ${port:9999}
+  context-path: /uaa
+
+security:
+  sessions: if-required
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1111/eureka
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761}/eureka

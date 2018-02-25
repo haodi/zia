@@ -1,4 +1,4 @@
-package com.yy.zia.auth;
+package com.learning.auth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,10 +8,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
-/**
- * Created by lihaodi on 2017/5/30.
- */
 
 @Configuration
 @EnableWebSecurity

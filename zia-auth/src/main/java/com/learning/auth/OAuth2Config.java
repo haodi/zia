@@ -1,4 +1,4 @@
-package com.yy.zia.auth;
+package com.learning.auth;
 
 import javax.sql.DataSource;
 

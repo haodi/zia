@@ -8,13 +8,10 @@ import java.util.Map;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-/**
- * Created by lihaodi on 2017/5/30.
- */
-
 @RestController
 @RequestMapping("test")
 public class TestController {
+
     @RequestMapping(method = GET)
     public Map<String, String> getTest() {
         Map<String, String> map = new HashMap<>();
