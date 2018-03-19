@@ -3,8 +3,10 @@ package com.learning.zuul.configuration;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.netflix.hystrix.exception.HystrixTimeoutException;
+import com.netflix.zuul.context.RequestContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -64,7 +66,9 @@ public class DefaultFallbackProvider implements FallbackProvider {
 
             @Override
             public InputStream getBody() throws JsonProcessingException {
+                RequestContext ctx = RequestContext.getCurrentContext();
                 Map<String, String> result = new HashMap<>();
+                result.put("serverId", (String) ctx.get(FilterConstants.SERVICE_ID_KEY));
                 result.put("message", "Service is down!");
 
                 return new ByteArrayInputStream(objectMapper.writeValueAsBytes(result));
