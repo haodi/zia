@@ -1,4 +1,4 @@
-package com.yy.zia.demo.rest;
+package com.learing.service.rest;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.yy.zia.demo.rest;
+package com.learing.service.rest;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
