@@ -8,9 +8,9 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @EnableZuulProxy
 @EnableOAuth2Sso
 @SpringCloudApplication
-public class ZUULApplication {
+public class ZUULServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ZUULApplication.class, args);
+        SpringApplication.run(ZUULServerApplication.class, args);
     }
 }
 
