@@ -3,7 +3,7 @@ spring:
     name: zia-zuul
 
 server:
-  port: ${port:8089}
+  port: ${port:8080}
 
 security:
   oauth2:
