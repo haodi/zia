@@ -30,7 +30,7 @@
     <modules>
         <module>zia-eureka</module>
         <module>zia-auth</module>
-        <module>zia-zuul</module>
+        <module>zuul-server</module>
         <module>zia-webapp</module>
         <module>zia-service</module>
         <module>zia-admin</module>
