@@ -12,7 +12,7 @@
 
     <artifactId>admin</artifactId>
 
-    <name>spring boot admin server</name>
+    <name>Spring Boot Admin Server</name>
 
     <dependencies>
         <dependency>

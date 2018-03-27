@@ -33,7 +33,7 @@
         <module>zuul-server</module>
         <module>zia-webapp</module>
         <module>zia-service</module>
-        <module>zia-admin</module>
+        <module>spring-boot-admin</module>
     </modules>
 
     <dependencyManagement>
