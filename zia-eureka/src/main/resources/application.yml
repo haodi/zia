@@ -14,5 +14,5 @@ eureka:
     fetch-registry: false #开发、测试环境为单机模式，不需要同步其他的Eureka Server节点的数据
     register-with-eureka: false
   server:
-    eviction-interval-timer-in-ms: 4000
-    renewal-percent-threshold: 0.9
+    eviction-interval-timer-in-ms: 4000 #服务列表清理间隔
+    renewal-percent-threshold: 0.9 #触发自我保护的心跳数比例阈值
